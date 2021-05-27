@@ -11,7 +11,7 @@ const WaveHook = (props) => {
 		color = '#07C790',
 		range = 0,
 		fontSize = 'default',
-		FontFamily = '宋体',
+		fontFamily = '宋体',
 		width = '200px',
 		type = 'circle'
 	} = props;
@@ -126,7 +126,7 @@ const WaveHook = (props) => {
 		// 百分比
 		ctx.globalCompositeOperation = 'xor';
 		ctx.beginPath();
-		ctx.font = `${Font[fontSize]} ${FontFamily}`;
+		ctx.font = `${Font[fontSize]} ${fontFamily}`;
 		ctx.textAlign = 'center';
 		ctx.fillStyle = color;
 		ctx.fillText(range || 0, canvasWidth / 2, canvasWidth / 2 + 10);
