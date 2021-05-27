@@ -16,16 +16,6 @@ const WaveHook = (props) => {
 		type = 'circle'
 	} = props;
 
-	// const hexToRgba = (hex, opacity) => {
-	// 	hex = hex || '#dcdcdc';
-	// 	if (hex.split('rgb').length > 1) {
-	// 		hex = hex.split('rgb')[1].split(')');
-	// 		hex.splice(1, 1, opacity);
-	// 		return `rgba${hex.join()})`;
-	// 	}
-	// 	return 'rgba(' + parseInt('0x' + hex.slice(1, 3), 10) + ',' + parseInt('0x' + hex.slice(3, 5), 10) + ',' +
-	// 		parseInt('0x' + hex.slice(5, 7), 10) + ',' + opacity + ')';
-	// };
 	const hexToRgba = (hex, opacity) => {
 		let c;
 		if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
@@ -34,7 +24,7 @@ const WaveHook = (props) => {
 				c = [c[0], c[0], c[1], c[1], c[2], c[2]];
 			}
 			c = '0x' + c.join('');
-			return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + opacity + ')';
+			return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + opacity + ')';
 		}
 		throw new Error('Bad Hex');
 	};
@@ -162,18 +152,26 @@ const WaveHook = (props) => {
 		isDrawContainer = true;
 	};
 	return (
-		<div style={{
-			width: width,
-			height: width,
-			position: 'relative'
-		}}>
-			<Ring color={colorOp1} width={width} />
-			<canvas ref={canvasRef} style={{
-				display: 'inlne-block',
-				position: 'absolute',
-				left: '15.8%',
-				top: '19.5%'
-			}}></canvas>
+		<div
+			style={{
+				width: width,
+				height: width,
+				position: 'relative'
+			}}
+		>
+			<Ring
+				color={colorOp1}
+				width={width}
+			/>
+			<canvas
+				ref={canvasRef}
+				style={{
+					display: 'inlne-block',
+					position: 'absolute',
+					left: '15.8%',
+					top: '19.5%'
+				}}
+			/>
 		</div>
 	);
 };

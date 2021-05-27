@@ -13,8 +13,9 @@ export default () => {
 			}}
 		>
 			<Wave
-				color='#2E81F7'
-				range={50}
+				color='#E86452'
+				range={45}
+				width={400}
 			/>
 		</div>
 	);
