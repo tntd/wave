@@ -153,6 +153,7 @@ const WaveHook = (props) => {
 	};
 	return (
 		<div
+			className='tntx-wave'
 			style={{
 				width: width,
 				height: width,

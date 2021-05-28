@@ -1,6 +1,6 @@
 {
   "name": "@tntx/wave",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "description": "水波进度球",
